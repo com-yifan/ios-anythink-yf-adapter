@@ -1,0 +1,64 @@
+#建议使用github源，pod install前请检查终端代理网络是否通畅(可能需要通过代码给终端设置代理，否则终端不会走代理服务，具体请检查您的代理服务流量变化)，如遇失败可尝试使用pod install --repo-update命令
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '13.0'
+
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+         end
+    end
+  end
+end
+
+target 'iOSDemo' do
+  use_frameworks!
+  
+  #Taku SDK
+  pod 'AnyThinkiOS','6.5.43'
+
+  #广告平台Adapter
+  #Anythink Kuying Adx SDK(necessary)
+  pod 'AnyThinkMediationAdxSmartdigimktCNAdapter','6.5.40.0'
+#  pod 'AnyThinkMediationBaiduAdapter','10.02.1'
+#  #Baidu--4.80 SDK,podfile文件顶部增加 source 'https://github.com/CocoaPods/Specs.git'
+#  pod 'AnyThinkMediationKuaiShouAdapter','4.9.20.1.2'
+#  pod 'AnyThinkMediationTTAdapter','7.2.0.0.2'
+#  pod 'AnyThinkMediationAdmobAdapter','12.12.0.0'
+#  pod 'AnyThinkMediationGDTAdapter','4.15.60.3'
+  pod 'AnyThinkMediationMSAdapter','2.7.7.2.1'
+  
+  #第三方数据统计SDK
+#  pod 'AppsFlyerFramework'
+#  pod 'Adjust'
+#  pod 'FirebaseAnalytics'
+ 
+  # Demo UI依赖的第三库
+  pod 'Masonry'
+  pod 'SDWebImage'
+  pod 'MJRefresh'
+  pod 'SVProgressHUD'
+   # Anythink适配器
+   pod 'AnyThinkMediationYFAdapter', '6.1.0.0'
+   # 亿帆SDK【必须】
+   pod 'YFAdsSDK', '6.1.0.0'
+   #  百度【必须】
+   pod 'BaiduMobAdSDK','10.02'
+   # 优量汇【必须】
+   pod 'GDTMobSDK' ,'4.15.60'
+   # 京东【必须】
+   pod 'JADYun', '2.6.8'
+   pod 'JADYunMotion', '2.6.8'  #京东摇一摇组件
+   # 穿山甲【必须】⚠️注意：旧版本有 按照2.3-1方式集成 的，需要去掉 TTSDKFramework
+   pod 'Ads-CN', '7.1.0.9', :subspecs => ['BUAdSDK','CSJMediation','BUAdLive-Framework']
+   # Gromore-Adn适配器
+   pod 'GMBaiduAdapter', '5.394.0'
+   pod 'GMGdtAdapter', '4.15.41.2'
+   pod 'GMKsAdapter', '4.6.30.1.2'
+   # 快手【必须】
+   pod 'KSAdSDK','4.9.20.1'
+   # 微信OpenSDK【必须】，如App内已通过其他方式集成OpenSDK，无需再次集成
+   pod 'WechatOpenSDK-XCFramework'
+end

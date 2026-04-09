@@ -83,7 +83,7 @@
 #pragma mark - Load Ad 加载广告
 /// 加载广告
 - (void)loadAd {
-    self.splashWindow.hidden = NO;
+//    self.splashWindow.hidden = NO;
     NSMutableDictionary *loadConfigDict = [NSMutableDictionary dictionary];
     
     //开屏超时时间
@@ -160,8 +160,8 @@
 //    [AdLoadConfigTool splash_loadExtraConfigAppend_CustomSkipButton:configDict];
     
     //展示广告,在App原window中展示
-    [[ATAdManager sharedManager] showSplashWithPlacementID:SplashPlacementID config:config window:self.splashWindow inViewController:self.splashWindow.rootViewController extra:configDict delegate:self];
-    [self showFeedBackBtn];
+    [[ATAdManager sharedManager] showSplashWithPlacementID:SplashPlacementID config:config window:[UIApplication sharedApplication].keyWindow inViewController:[UIApplication sharedApplication].keyWindow.rootViewController extra:configDict delegate:self];
+//    [self showFeedBackBtn];
 }
   
 

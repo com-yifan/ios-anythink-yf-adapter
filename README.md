@@ -5,6 +5,7 @@
 - Taku 自定义广告平台文档：<https://help.takuad.com/docs/fRMh7C>
 - Taku 自定义 Adapter 基类说明：<https://help.takuad.com/docs/iHxZQZ>
 - Taku亿帆适配器Demo：https://github.com/com-yifan/ios-anythink-yf-adapter
+- 亿帆SDK对接文档：https://github.com/com-yifan/ios-yf-sdk
 
 #### 1.2 接入说明
 
@@ -24,7 +25,7 @@
 pod 'AnyThinkiOS','6.5.43'
 # Taku亿帆适配器，适用于Taku6.5.x版本
 pod 'AnyThinkMediationYFAdapter'
-# 亿帆SDK 部分适配器导入可参考文档3.2章节
+# 亿帆SDK 部分适配器导入可亿帆对接文档3.2章节
 pod 'YFAdsSDK', '6.1.0.0'
 #  百度【必须】
 pod 'BaiduMobAdSDK','10.032'

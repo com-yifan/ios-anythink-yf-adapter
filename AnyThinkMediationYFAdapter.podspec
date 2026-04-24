@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AnyThinkMediationYFAdapter"
-  s.version          = "6.1.0.0.1"
+  s.version          = "6.1.0.0.2"
   s.summary          = "AnyThinkMediationYFAdapter for AnyThink"
   s.description      = <<-DESC
   WMYFAdAdapter 提供YF广告适配支持。
